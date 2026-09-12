@@ -1,0 +1,40 @@
+<section class="panel">
+  <h2>Carrito de ventas</h2>
+
+  <ng-container *ngIf="carrito$ | async as carrito">
+    <ul class="lista-carrito" *ngIf="carrito.length > 0; else carritoVacio">
+      <li *ngFor="let item of carrito" class="item-carrito">
+        <div class="item-info">
+          <span class="item-nombre">{{ item.producto.nombre }}</span>
+          <span class="item-precio">Q{{ item.producto.precio.toFixed(2) }} c/u</span>
+        </div>
+
+        <div class="item-cantidad">
+          <button (click)="decrementar(item)">-</button>
+          <span>{{ item.cantidad }}</span>
+          <button (click)="incrementar(item)">+</button>
+        </div>
+
+        <span class="item-subtotal">Q{{ (item | subtotal).toFixed(2) }}</span>
+
+        <button class="btn-eliminar" (click)="eliminar(item)">Eliminar</button>
+      </li>
+    </ul>
+
+    <ng-template #carritoVacio>
+      <p>El carrito está vacío. Agregue productos desde el listado.</p>
+    </ng-template>
+
+    <div class="totales" *ngIf="carrito.length > 0">
+      <div class="fila-total">
+        <span>Total sin IVA:</span>
+        <strong>Q{{ (carrito | totalCarrito).toFixed(2) }}</strong>
+      </div>
+      <div class="fila-total">
+        <span>Total con IVA (12%):</span>
+        <strong>Q{{ (carrito | totalCarrito | conIva).toFixed(2) }}</strong>
+      </div>
+      <button class="btn-vaciar" (click)="vaciar()">Vaciar carrito</button>
+    </div>
+  </ng-container>
+</section>

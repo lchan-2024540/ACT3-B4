@@ -1,0 +1,91 @@
+.panel {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.lista-carrito {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.item-carrito {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 0.8fr auto;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-nombre {
+  font-weight: 600;
+}
+
+.item-precio {
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.item-cantidad {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.item-cantidad button {
+  width: 1.8rem;
+  height: 1.8rem;
+  border: none;
+  border-radius: 6px;
+  background: #e5e7eb;
+  cursor: pointer;
+}
+
+.item-subtotal {
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+.btn-eliminar {
+  background: #dc2626;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.totales {
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.fila-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+}
+
+.btn-vaciar {
+  margin-top: 0.6rem;
+  width: 100%;
+  background: #374151;
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+}

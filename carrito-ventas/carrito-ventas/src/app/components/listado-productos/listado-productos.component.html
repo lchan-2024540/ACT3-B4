@@ -1,0 +1,17 @@
+<section class="panel">
+  <h2>Productos disponibles</h2>
+
+  <ul class="lista-productos" *ngIf="productos.length > 0; else sinProductos">
+    <li *ngFor="let producto of productos" class="producto-card">
+      <div class="producto-info">
+        <span class="producto-nombre">{{ producto.nombre }}</span>
+        <span class="producto-precio">Q{{ producto.precio.toFixed(2) }}</span>
+      </div>
+      <button (click)="agregarAlCarrito(producto)">Agregar al carrito</button>
+    </li>
+  </ul>
+
+  <ng-template #sinProductos>
+    <p>No hay productos disponibles.</p>
+  </ng-template>
+</section>
